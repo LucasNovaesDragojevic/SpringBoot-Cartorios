@@ -1,3 +1,3 @@
-insert into cartorio (name) values ('cartório regional 022');
-insert into cartorio (name) values ('cartório regional 058');
-insert into cartorio (name) values ('cartório regional 074');
+insert into cartorio (name, street, number, city, state, zip) values ('cartório regional 022', 'Rua da alvorada', '578', 'São Paulo', 'São Paulo', '00222-884');
+insert into cartorio (name, street, number, city, state, zip) values ('cartório regional 098', 'Rua celeste', '993', 'Rio de Janeiro', 'Rio de Janeiro', '00444-659');
+insert into cartorio (name, street, number, city, state, zip) values ('cartório regional 010', 'Alameda safira', '741', 'Belo Horizonte', 'Minas Gerais', '05522-854');
