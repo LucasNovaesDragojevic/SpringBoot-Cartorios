@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Cartório</title>
+<div th:replace="fragments/bootstrap :: bootstrap" />
+</head>
+<body>
+	<div th:replace="fragments/navbar :: navbar" />
+	<div class="container my-3">
+		
+		<h1 class="text-center" th:if="${cartorio.name == null}">Novo cartório</h1>
+		<h1 class="text-center" th:if="${cartorio.name != null}" th:text="${cartorio.name}"></h1>
+		
+		<form class="mt-3 pt-3" th:action="@{/cartorios/save}" th:object="${cartorio}" method="post">
+			<input type="hidden" th:field="*{id}" required/>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="nome">Nome</label>
+					<input class="form-control" id="nome" type="text" th:field="*{name}" required/>
+				</div>			
+			</div>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="nome">Rua</label>
+					<input class="form-control" id="nome" type="text" th:field="*{street}" required/>
+				</div>
+				<div class="form-group col">
+					<label for="number">Número</label>
+					<input class="form-control" id="number" type="text" th:field="*{number}" required/>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="city">Cidade</label>
+					<input class="form-control" id="city" type="text" th:field="*{city}" required/>
+				</div>
+				<div class="form-group col">
+					<label for="state">Estado</label>
+					<input class="form-control" id="state" type="text" th:field="*{state}" required/>
+				</div>
+				<div class="form-group col">
+					<label for="zip">CEP</label>
+					<input class="form-control" id="zip" type="text" th:field="*{zip}" required/>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Salvar</button>
+		</form>		
+	</div>
+</body>
+</html>

@@ -1,16 +1,39 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Super Title</title>
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>Cartórios</title>
 </head>
 <body>
-
-<div id="content"> 
-	<div th:each="cartorio : ${cartorios}">
-		<p th:text="${cartorio.name}"></p>
+	<div th:replace="fragments/bootstrap :: bootstrap"></div>
+	<div th:replace="fragments/navbar :: navbar"></div>
+	<div class="container my-3">
+		<h1 class=" text-center">Lista</h1>
+		<a th:href="@{/cartorios/create}" class="btn btn-primary mt-3 mb-2">Adicionar</a>
+		<div class="table-responsive text-center">
+			<table class="table table-bordered">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cartorio : ${cartorios}">
+						<td th:text="${cartorio.name}"></td>
+						<td>
+							<a th:href="|@{/cartorios}/${cartorio.id}|" class="btn btn-info">Ver / Alterar</a>
+						</td>
+						<td>
+							<a th:href="|@{/cartorios/delete}/${cartorio.id}|" class="btn btn-danger">Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
-
 </body>
 </html>
