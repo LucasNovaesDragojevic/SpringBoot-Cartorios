@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Super Title</title>
+</head>
+<body>
+
+<div id="content"> 
+	<div th:each="cartorio : ${cartorios}">
+		<p th:text="${cartorio.name}"></p>
+	</div>
+</div>
+
+</body>
+</html>
